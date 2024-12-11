@@ -10,7 +10,9 @@ public class S15 {
 
     public static String reemplazarVocales(String cadena, char vocalReemplazo) {
         //StringBuilder para almacenar la nueva cadena con las vocales reemplazadas
-        StringBuilder resultado = new StringBuilder();
+        //StringBuilder resultado = new StringBuilder();
+    	String resultado = "";
+    	
         //Cadena con todas las vocales
         String vocales = "AEIOUaeiou";
 
@@ -20,9 +22,11 @@ public class S15 {
 
             //Si el caracter es vocal, la reemplazamos
             if (vocales.indexOf(c) != -1){
-                resultado.append(vocalReemplazo);
+                //resultado.append(vocalReemplazo);
+            	resultado = resultado + vocalReemplazo;
             } else {
-                resultado.append(c);  //Si no es una vocal, lo dejamos igual
+                //resultado.append(c);  //Si no es una vocal, lo dejamos igual
+            	resultado = resultado + c;
             }
         }
 

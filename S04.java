@@ -8,7 +8,9 @@ public class S04 {
 	
 	public static String toCamelCase(String cadena) {
         //StringBuilder para almacenar el resultado
-        StringBuilder camelCase = new StringBuilder();
+		//StringBuilder camelCase1 = new StringBuilder();
+        String camelCase = "";
+
         //Caracter para cada letra
         char c;
         //Para controlar si la siguiente letra debe ser mayúscula
@@ -21,21 +23,25 @@ public class S04 {
             //Si encontramos un espacio, la siguiente letra ha de ser mayúscula
             if (c == ' ') {
                 siguienteMayuscula = true;
-                camelCase.append(c);
+                //camelCase.append(c);
+                camelCase = camelCase + c;
             } else {                
             	//Despues de cada espacio vendría una mayuscula
                 if (siguienteMayuscula) {
-                    camelCase.append(Character.toLowerCase(c)); //La guardamos en minuscula
+                    //camelCase.append(Character.toLowerCase(c)); //La guardamos en minuscula
+                	camelCase = camelCase + Character.toLowerCase(c);
                     siguienteMayuscula = false; //Las siguientes letras son minusculas hasta encontrar un espacio
                 } else {
                 	//Si es la primera letra de toda la cadena, la ponemos en minuscula
                 	if (camelCase.length()== 0) {
 	                    //Sino la añadimos en mminuscula
-                		camelCase.append(Character.toLowerCase(c));
+                		//camelCase.append(Character.toLowerCase(c));
+                		camelCase = camelCase + Character.toLowerCase(c);
                 	}
                 	else {
 	                    //Sino la añadimos en mayuscula
-	                    camelCase.append(Character.toUpperCase(c));  
+	                    //camelCase.append(Character.toUpperCase(c)); 
+	                    camelCase = camelCase + Character.toUpperCase(c);
                 	}
                 }
             }
@@ -45,7 +51,7 @@ public class S04 {
     }
 
     public static void main(String[] args) {
-        String resultado = toCamelCase("Una frase PAra Camel CaSe");
+        String resultado = toCamelCase("Una frase PAra Camel CaSe$");
         System.out.println(resultado);
     }
 }

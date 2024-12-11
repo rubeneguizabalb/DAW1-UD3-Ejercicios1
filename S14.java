@@ -8,7 +8,9 @@ public class S14 {
 	
 	public static String eliminarVocales(String cadena) {
         //StringBuilder para almacenar la cadena resultante
-        StringBuilder resultado = new StringBuilder();
+        //StringBuilder resultado = new StringBuilder();
+        String resultado = "";
+        
         //Cadena con todas las vocales
         String vocales = "AEIOUaeiou";
 
@@ -18,7 +20,8 @@ public class S14 {
 
             //Si el caracter no esta entre las vocales la añadimos porque es consonante
             if (vocales.indexOf(c) == -1){
-                resultado.append(c);
+                //resultado.append(c);
+            	resultado = resultado + c;
             }
         }
 

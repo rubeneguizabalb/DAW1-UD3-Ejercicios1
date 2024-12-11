@@ -7,12 +7,14 @@ public class S10 {
 	 * */
 	
     public static String invertirCadena(String cadena) {
-        StringBuilder cadenaInvertida = new StringBuilder();
+        //StringBuilder cadenaInvertida = new StringBuilder();
+    	String cadenaInvertida = "";
 
         //Recorremos la cadena desde el final hasta el principio
         //Hacemos un for con recorrido inverso (i--)
         for (int i = cadena.length() - 1; i >= 0; i--) {
-            cadenaInvertida.append(cadena.charAt(i));  //Añadimos el carácter al StringBuilder
+            //cadenaInvertida.append(cadena.charAt(i));  //Añadimos el carácter al StringBuilder
+        	cadenaInvertida = cadenaInvertida + cadena.charAt(i);
         }
 
         return cadenaInvertida.toString();  

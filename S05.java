@@ -11,7 +11,8 @@ public class S05 {
 	
     public static String toCamelCase(String cadena, boolean minusculaInicial) {
         //StringBuilder para almacenar el resultado
-        StringBuilder camelCase = new StringBuilder();
+        //StringBuilder camelCase1 = new StringBuilder();
+        String camelCase = "";
 
         //Variable que nos indica si la siguiente letra debe ir en mayúscula
         boolean primeraLetraPalabra = false;
@@ -23,33 +24,40 @@ public class S05 {
             //Si el carácter es un espacio, la siguiente letra debe ser mayúscula
             if (c == ' ') {
                 primeraLetraPalabra = true;
-                camelCase.append(c); 
+                //camelCase.append(c); 
+                camelCase = camelCase + c;
             } else {                
                 //Convertimos el primer carácter de la palabra en minúscula
             	//o mayúscula según el parámetro
                 if (camelCase.length() == 0) {
                     if (minusculaInicial) {
-                        camelCase.append(Character.toLowerCase(c)); //Primera letra minúscula
+                        //camelCase.append(Character.toLowerCase(c)); //Primera letra minúscula
+                        camelCase = camelCase + Character.toLowerCase(c);
                     } else {
-                        camelCase.append(Character.toUpperCase(c)); //Primera letra mayúscula
+                        //camelCase.append(Character.toUpperCase(c)); //Primera letra mayúscula
+                        camelCase = camelCase + Character.toUpperCase(c);
                     }
                 } else {
                 	if (primeraLetraPalabra) {
                 		primeraLetraPalabra = false;
                         if (minusculaInicial) {
-                            camelCase.append(Character.toLowerCase(c)); //Primera letra minúscula
+                            //camelCase.append(Character.toLowerCase(c)); //Primera letra minúscula
+                        	camelCase = camelCase + Character.toLowerCase(c);
                         } else {
-                            camelCase.append(Character.toUpperCase(c)); //Primera letra mayúscula
+                            //camelCase.append(Character.toUpperCase(c)); //Primera letra mayúscula
+                        	camelCase = camelCase + Character.toUpperCase(c);
                         }
                     }
                 	else {
 	                	//El resto se convierten al reves segun el parametro
 	                	//Si empieza en mayuscula el resto en minusculas
 	                	//Si empieza en minuscula el resto en mayusculas
-	                	if (minusculaInicial) {
-	                        camelCase.append(Character.toUpperCase(c)); //resto de letras en mayuscula
+	                	if (minusculaInicial) {	                		
+	                        //camelCase.append(Character.toUpperCase(c)); //resto de letras en mayuscula
+	                		camelCase = camelCase + Character.toUpperCase(c);
 	                    } else {
-	                        camelCase.append(Character.toLowerCase(c)); //resto de letras en minuscula
+	                        //camelCase.append(Character.toLowerCase(c)); //resto de letras en minuscula
+	                    	camelCase = camelCase + Character.toLowerCase(c);
 	                    }
                 	}
                 }

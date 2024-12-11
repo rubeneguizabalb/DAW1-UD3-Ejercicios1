@@ -18,11 +18,13 @@ public class S06 {
         }
 
         //StringBuilder para almacenar la subcadena resultante
-        StringBuilder resultado = new StringBuilder();
+        //StringBuilder resultado = new StringBuilder();
+        String resultado = "";
 
         //Recorrer la cadena entre los índices (convertidos a 0 al estar en Java)
         for (int i = inicio - 1; i < fin; i++) {
-            resultado.append(cadena.charAt(i)); //Añadir cada carácter al StringBuilder
+            //resultado.append(cadena.charAt(i)); //Añadir cada carácter al StringBuilder
+        	resultado = resultado + cadena.charAt(i);
         }
 
         return resultado.toString();  //Devolver la subcadena generada
